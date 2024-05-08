@@ -4,15 +4,16 @@ on:
   # schedule:
   #   - cron: '0 2 * * *' # run at 2 AM UTC
   workflow_dispatch:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
 
 jobs:
   build:
       strategy:
         matrix:
-          os: [macos-10.15, windows-2022, ubuntu-18.04]
+          os: [windows-2022]
+          # os: [macos-10.15, windows-2022, ubuntu-18.04]
       runs-on: ${{ matrix.os }}
       steps:
         - name: Check out Git repository
